@@ -20,9 +20,8 @@ main{display:flex;flex-direction:column;gap:44px}
 .hero h3{font:700 36px 'Playfair Display',serif;line-height:1.2}
 .hero p{color:var(--muted)}
 .hero-cta{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
-.photo-wrap{display:grid;place-items:center;overflow:hidden;border-radius:18px;min-height:380px;background:#fff;animation:photoEnter 2s forwards, floatY 9s ease-in-out infinite}
+.photo-wrap{display:grid;place-items:center;overflow:hidden;border-radius:18px;min-height:380px;background:#fff;animation:photoEnter 2s forwards}
 @keyframes photoEnter{0%{transform:scale(2) translate(0,0);opacity:0}50%{transform:scale(1) translate(0,0);opacity:1}100%{transform:scale(1) translate(0,0);opacity:1}}
-@keyframes floatY{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
 .photo{width:100%;height:100%;object-fit:cover;display:block}
 .teacher-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
 .teacher-grid a{display:block;text-align:center;transition:.3s}
@@ -72,7 +71,38 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
 .slider::-moz-range-track{height:4px;background:var(--ring);border-radius:999px}
 .slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .15s ease}
 .slider:active::-moz-range-thumb{transform:scale(1.05)}
-.price-display{font-weight:800;font-size:18px;margin-top:10px}
+#contact .btn{margin-top:10px}
+.menu-toggle{display:none}
+
+/* Mobile adaptations */
+@media(max-width:760px){
+  body{font-size:18px;line-height:1.85}
+  .layout{padding:16px;gap:18px}
+  .brand-logo svg{width:48px;height:48px}
+  .brand-logo img{width:48px;height:48px}
+  .nav a{padding:10px 12px;margin-bottom:6px;border-radius:8px}
+  .card{padding:22px;border-radius:16px}
+  .section-title h2{font-size:24px;background-size:100% 8px}
+  .hero{gap:16px}
+  .hero h3{font:700 30px 'Playfair Display',serif}
+  .photo-wrap{min-height:280px;border-radius:16px}
+  .btn{padding:12px 16px;border-radius:10px}
+  .step-badge{width:36px;height:36px}
+  body::before, body::after{opacity:.28}
+  .slider{height:3px}
+  .slider::-webkit-slider-runnable-track{height:3px}
+  .slider::-webkit-slider-thumb{width:14px;height:14px;margin-top:-5.5px}
+  .slider::-moz-range-track{height:3px}
+  .slider::-moz-range-thumb{width:14px;height:14px}
+  .price-display{font-size:16px}
+  .teacher-grid a .teacher-name{font-size:16px}
+  .teacher-grid a .teacher-role,.teacher-grid a .teacher-subrole{font-size:14px}
+  /* mobile nav toggle */
+  .menu-toggle{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border:1px solid var(--ring);border-radius:10px;background:#fff;color:var(--ink);cursor:pointer;margin-left:auto}
+  .menu-toggle[aria-expanded="true"]{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:none}
+  .sidebar .nav{display:none}
+  .sidebar .nav.is-open{display:block}
+}
 #contact .btn{margin-top:10px}
 
 /* Mobile adaptations */
@@ -112,4 +142,26 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .pill{padding:6px 10px}
   .teacher-grid a .teacher-name{font-size:15px}
   .teacher-grid a .teacher-role,.teacher-grid a .teacher-subrole{font-size:13px}
+}
+/* Safe-area support for devices with notches */
+@supports(padding: env(safe-area-inset-top)){
+  body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+}
+/* Orientation-specific tweaks */
+@media screen and (orientation:portrait){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .hero{grid-template-columns:1fr}
+  .photo-wrap{min-height:260px}
+}
+@media screen and (orientation:landscape) and (max-height:500px){
+  body{font-size:16px;line-height:1.6}
+  .layout{gap:14px}
+  .sidebar{position:static}
+  .nav a{padding:8px 10px;margin-bottom:6px}
+  .card{padding:18px;border-radius:14px}
+  .section-title h2{font-size:20px}
+  .hero{grid-template-columns:1fr .8fr;gap:12px}
+  .photo-wrap{min-height:200px}
+  .teacher-grid a img{height:220px}
 }

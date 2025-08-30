@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Сергей — Репетитор по информатике</title>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/base.css">
@@ -14,7 +14,7 @@
   <aside class="sidebar">
     <div class="brand"><a href="../index.html"><div class="brand-logo" aria-label="tutITech логотип">
       <img src="../logo.png" alt="tutITech логотип"/>
-    </div><h1>Сергей</h1></a></div>
+    </div><h1>Сергей</h1></a><button class="menu-toggle" aria-controls="toc" aria-expanded="false">Меню</button></div>
     <nav class="nav" id="toc">
       <a href="#hero" class="active">Главная</a>
       <a href="#directions">Направления подготовки</a>
@@ -171,22 +171,8 @@
     </section>
   </main>
 </div>
-<script>
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} })
-  },{threshold:.15});
-  document.querySelectorAll('.card').forEach(el=>io.observe(el));
-  // Active nav highlighting
-  const navLinks=document.querySelectorAll('#toc a');
-  const sections=Array.from(navLinks).map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
-  function setActive(id){ navLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href')===`#${id}`)); }
-  const activeObserver=new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{ if(entry.isIntersecting){ setActive(entry.target.id); } });
-  },{rootMargin:'-45% 0px -50% 0px',threshold:0.01});
-  sections.forEach(s=>activeObserver.observe(s));
-  navLinks.forEach(a=>a.addEventListener('click',()=>{ const id=a.getAttribute('href').slice(1); setActive(id); }));
-
-  // price slider removed
-</script>
+<script src="../js/animateCardsOnScroll.js" defer></script>
+<script src="../js/activeNavHighlight.js" defer></script>
+<script src="../js/mobileNavToggle.js" defer></script>
 </body>
 </html>
