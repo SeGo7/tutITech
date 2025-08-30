@@ -1,0 +1,115 @@
+.layout{display:grid;grid-template-columns:300px 1fr;gap:28px;max-width:1440px;margin:auto;padding:24px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}}
+.sidebar{position:sticky;top:20px;align-self:start}
+.brand{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.brand a{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand-logo{display:inline-block}
+.brand-logo svg{width:64px;height:64px;display:block}
+.brand-logo img{width:64px;height:64px;display:block}
+.nav a{display:block;padding:12px 14px;margin-bottom:8px;border-radius:10px;text-decoration:none;color:var(--muted);transition:.3s;border-left:4px solid transparent}
+.nav a.active,.nav a:hover{background:#fff;color:var(--ink);box-shadow:0 2px 6px rgba(0,0,0,.05);border-left-color:var(--accent)}
+.pill{display:inline-block;margin-top:12px;padding:8px 14px;border:1px solid var(--ring);border-radius:999px;text-decoration:none;color:var(--ink)}
+main{display:flex;flex-direction:column;gap:44px}
+.card{background:var(--card);padding:28px;border-radius:20px;border:1px solid var(--ring);box-shadow:0 8px 28px rgba(0,0,0,.06);opacity:0;transform:translateY(20px);transition:.6s}
+.card.show{opacity:1;transform:none}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.section-title h2{font-size:28px;font-weight:800;line-height:1.15;background-image:linear-gradient( to right, rgba(46,196,182,.25), rgba(255,107,107,.25) );background-repeat:no-repeat;background-size:100% 10px;background-position:0 100%}
+.tag{font-size:13px;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2));padding:5px 12px;border-radius:999px}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.hero h3{font:700 36px 'Playfair Display',serif;line-height:1.2}
+.hero p{color:var(--muted)}
+.hero-cta{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
+.photo-wrap{display:grid;place-items:center;overflow:hidden;border-radius:18px;min-height:380px;background:#fff;animation:photoEnter 2s forwards, floatY 9s ease-in-out infinite}
+@keyframes photoEnter{0%{transform:scale(2) translate(0,0);opacity:0}50%{transform:scale(1) translate(0,0);opacity:1}100%{transform:scale(1) translate(0,0);opacity:1}}
+@keyframes floatY{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+.photo{width:100%;height:100%;object-fit:cover;display:block}
+.teacher-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.teacher-grid a{display:block;text-align:center;transition:.3s}
+.teacher-grid a:hover{transform:translateY(-2px)}
+.teacher-grid a img{width:100%;max-width:340px;height:340px;object-fit:cover;object-position:center;border-radius:14px;display:block;margin:0 auto 10px;background:#fff;transition:.4s}
+.teacher-grid a:hover img{transform:scale(1.03)}
+/* Teacher card text layout */
+.teacher-grid a .teacher-name{display:block;font-weight:800;margin-top:8px;color:var(--ink);font-size:18px}
+.teacher-grid a .teacher-role{display:block;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:16px}
+.teacher-grid a .teacher-subrole{display:block;color:var(--muted);margin-top:2px;opacity:.9;font-size:15px}
+footer{text-align:center;margin:46px 0 12px;color:#6d7890;font-size:15px}
+.card{transition:.4s}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 34px rgba(0,0,0,.08)}
+details{border:1px solid var(--ring);border-radius:12px;padding:12px 14px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.03)}
+details+details{margin-top:10px}
+summary{cursor:pointer;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'▸';margin-left:6px;transition:.2s}
+details[open] summary::after{transform:rotate(90deg)}
+details p{max-height:0;overflow:hidden;opacity:.2;transition:max-height .35s ease, opacity .35s ease;margin:8px 0 0}
+details[open] p{max-height:240px;opacity:1}
+body::before, body::after{content:"";position:fixed;inset:auto;z-index:-1;filter:blur(60px);opacity:.35;pointer-events:none}
+body::before{top:-120px;left:-120px;width:420px;height:420px;background:radial-gradient(closest-side, rgba(46,196,182,.35), transparent)}
+body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radial-gradient(closest-side, rgba(255,107,107,.25), transparent)}
+
+/* Lists as cards */
+.card-list{display:flex;flex-direction:column;gap:14px;margin:14px 0 22px 0;padding:0;list-style:none}
+.card-list li{background:#fff;border:1px solid var(--ring);border-radius:14px;padding:14px 16px;box-shadow:0 2px 12px rgba(0,0,0,.03)}
+
+/* Help list (Irina page) */
+.help-list{list-style:none;margin:12px 0 20px 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.help-list li{background:#fff;border:1px solid var(--ring);border-radius:12px;padding:12px 14px;box-shadow:0 2px 10px rgba(0,0,0,.03)}
+
+/* Steps (vertical) */
+.step-list{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.step-list li{margin:0}
+.step-button{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:14px;background:#fff;border:1px solid var(--ring);box-shadow:0 2px 12px rgba(0,0,0,.03);transition:.2s}
+.step-button:hover{box-shadow:0 6px 18px rgba(0,0,0,.06);transform:translateY(-1px)}
+.step-badge{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:800}
+.step-text{flex:1}
+
+/* Price slider */
+.slider{width:100%;-webkit-appearance:none;appearance:none;height:4px;background:var(--ring);border-radius:999px;outline:none}
+.slider::-webkit-slider-runnable-track{height:4px;background:var(--ring);border-radius:999px}
+.slider::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none;box-shadow:0 2px 6px rgba(0,0,0,.2);margin-top:-6px;transition:transform .15s ease}
+.slider:active::-webkit-slider-thumb{transform:scale(1.05)}
+.slider::-moz-range-track{height:4px;background:var(--ring);border-radius:999px}
+.slider::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .15s ease}
+.slider:active::-moz-range-thumb{transform:scale(1.05)}
+.price-display{font-weight:800;font-size:18px;margin-top:10px}
+#contact .btn{margin-top:10px}
+
+/* Mobile adaptations */
+@media(max-width:760px){
+  body{font-size:18px;line-height:1.85}
+  .layout{padding:16px;gap:18px}
+  .brand-logo svg{width:48px;height:48px}
+  .brand-logo img{width:48px;height:48px}
+  .nav a{padding:10px 12px;margin-bottom:6px;border-radius:8px}
+  .card{padding:22px;border-radius:16px}
+  .section-title h2{font-size:24px;background-size:100% 8px}
+  .hero{gap:16px}
+  .hero h3{font:700 30px 'Playfair Display',serif}
+  .photo-wrap{min-height:280px;border-radius:16px}
+  .btn{padding:12px 16px;border-radius:10px}
+  .step-badge{width:36px;height:36px}
+  body::before, body::after{opacity:.28}
+  .slider{height:3px}
+  .slider::-webkit-slider-runnable-track{height:3px}
+  .slider::-webkit-slider-thumb{width:14px;height:14px;margin-top:-5.5px}
+  .slider::-moz-range-track{height:3px}
+  .slider::-moz-range-thumb{width:14px;height:14px}
+  .price-display{font-size:16px}
+  .teacher-grid a .teacher-name{font-size:16px}
+  .teacher-grid a .teacher-role,.teacher-grid a .teacher-subrole{font-size:14px}
+}
+@media(max-width:420px){
+  body{font-size:16px}
+  .layout{padding:12px;gap:14px}
+  .section-title h2{font-size:20px;background-size:100% 6px}
+  .hero h3{font:700 24px 'Playfair Display',serif}
+  .photo-wrap{min-height:220px}
+  .teacher-grid a img{height:260px;max-width:260px}
+  .card-list{grid-template-columns:1fr}
+  .step-button{padding:14px}
+  .step-badge{width:32px;height:32px}
+  .pill{padding:6px 10px}
+  .teacher-grid a .teacher-name{font-size:15px}
+  .teacher-grid a .teacher-role,.teacher-grid a .teacher-subrole{font-size:13px}
+}

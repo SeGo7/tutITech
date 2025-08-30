@@ -1,0 +1,15 @@
+:root {
+  --bg:#f9f9ff;
+  --ink:#0f172a;
+  --muted:#616c7c;
+  --accent:#ff6b6b;
+  --accent-2:#2ec4b6;
+  --card:#fff;
+  --ring: rgba(15,23,42,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--ink);font-size:20px;line-height:1.9}
+p{margin:12px 0 18px}
+ul,ol{margin:12px 0 20px 26px}
+li{margin:8px 0}
+html{scroll-behavior:smooth}
