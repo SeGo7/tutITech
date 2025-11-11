@@ -16,22 +16,46 @@ main{display:flex;flex-direction:column;gap:44px}
 .section-title h2{font-size:28px;font-weight:800;line-height:1.15;background-image:linear-gradient( to right, rgba(46,196,182,.25), rgba(255,107,107,.25) );background-repeat:no-repeat;background-size:100% 10px;background-position:0 100%}
 .tag{font-size:13px;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2));padding:5px 12px;border-radius:999px}
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+.hero.hero-single{grid-template-columns:1fr;text-align:center}
+.hero.hero-single .hero-content{margin:0 auto;text-align:center;align-items:center}
+.hero.hero-single .hero-cta{justify-content:center}
 @media(max-width:900px){.hero{grid-template-columns:1fr}}
+.hero-content{display:flex;flex-direction:column;gap:18px;max-width:520px;margin:0 auto}
+.hero-media{display:flex;justify-content:center}
+.hero-content{display:flex;flex-direction:column;gap:18px;max-width:520px;margin:0 auto}
+.hero-media{display:flex;justify-content:center}
 .hero h3{font:700 36px 'Playfair Display',serif;line-height:1.2}
 .hero p{color:var(--muted)}
 .hero-cta{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
-.photo-wrap{display:grid;place-items:center;overflow:hidden;border-radius:18px;min-height:380px;background:#fff;animation:photoEnter 2s forwards}
+.photo-wrap{display:grid;place-items:center;overflow:hidden;border-radius:18px;min-height:380px;background:transparent;animation:photoEnter 2s forwards}
 @keyframes photoEnter{0%{transform:scale(2) translate(0,0);opacity:0}50%{transform:scale(1) translate(0,0);opacity:1}100%{transform:scale(1) translate(0,0);opacity:1}}
-.photo{width:100%;height:100%;object-fit:cover;display:block}
+.photo{width:100%;height:100%;object-fit:contain;object-position:top center;display:block}
 .teacher-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
 .teacher-grid a{display:block;text-align:center;transition:.3s}
 .teacher-grid a:hover{transform:translateY(-2px)}
-.teacher-grid a img{width:100%;max-width:340px;height:340px;object-fit:cover;object-position:center;border-radius:14px;display:block;margin:0 auto 10px;background:#fff;transition:.4s}
+.teacher-grid a img{width:100%;max-width:340px;height:340px;object-fit:contain;object-position:center;border-radius:14px;display:block;margin:0 auto 10px;background:transparent;transition:.4s;padding:20px;box-sizing:border-box}
+.teacher-grid a img[data-subject="rus"]{object-position:center;padding-top:28px;padding-bottom:12px}
+.teacher-grid a img[data-subject="inf"]{padding:28px}
 .teacher-grid a:hover img{transform:scale(1.03)}
 /* Teacher card text layout */
 .teacher-grid a .teacher-name{display:block;font-weight:800;margin-top:8px;color:var(--ink);font-size:18px}
 .teacher-grid a .teacher-role{display:block;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:16px}
 .teacher-grid a .teacher-subrole{display:block;color:var(--muted);margin-top:2px;opacity:.9;font-size:15px}
+.reviews-caption{margin:0 0 14px;color:var(--muted)}
+.reviews-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.reviews-gallery .review-card{background:#fff;border-radius:16px;border:1px solid var(--ring);box-shadow:0 6px 18px rgba(0,0,0,.05);padding:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;transition:transform .2s ease, box-shadow .2s ease}
+.reviews-gallery .review-card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.08)}
+.reviews-gallery .review-card img{width:100%;height:auto;border-radius:12px;display:block;transition:transform .2s ease}
+.reviews-gallery .review-card:hover img{transform:scale(1.02)}
+.reviews-gallery .review-card button{position:absolute;inset:0;border:none;background:transparent;cursor:pointer}
+
+.reviews-modal{position:fixed;inset:0;background:rgba(15,23,42,.72);display:flex;align-items:center;justify-content:center;z-index:999;opacity:0;pointer-events:none;transition:opacity .2s ease}
+.reviews-modal.is-open{opacity:1;pointer-events:auto}
+.reviews-modal__inner{background:#fff;border-radius:20px;padding:18px;max-width:min(90vw,720px);width:100%;box-shadow:0 20px 60px rgba(0,0,0,.18);position:relative}
+.reviews-modal__media{max-height:75vh;overflow:auto;border-radius:14px}
+.reviews-modal__media img{width:100%;height:auto;display:block;border-radius:14px}
+.reviews-modal__close{position:absolute;top:12px;right:12px;border:none;background:rgba(15,23,42,.06);color:var(--ink);padding:8px 12px;border-radius:999px;font-weight:600;cursor:pointer;transition:.2s ease}
+.reviews-modal__close:hover{background:rgba(15,23,42,.12)}
 footer{text-align:center;margin:46px 0 12px;color:#6d7890;font-size:15px}
 .card{transition:.4s}
 .card:hover{transform:translateY(-2px);box-shadow:0 10px 34px rgba(0,0,0,.08)}

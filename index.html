@@ -23,29 +23,25 @@
       <a href="#reviews">Отзывы</a>
       <a href="#join">Как начать</a>
       <a href="#price">Стоимость</a>
-      <a href="#contact">Связь</a>
     </nav>
     <a class="pill contact" href="https://t.me/tutITech_official" target="_blank">Связаться</a>
   </aside>
   <main>
-    <section class="card hero" id="hero">
-      <div>
+    <section class="card hero hero-single" id="hero">
+      <div class="hero-content">
         <div class="section-title"><h2>Tutors IT technologies -</h2></div>
         <div class="section-title"><h2>Репетиторы IT технологий</h2></div>
         <p>Современные онлайн‑занятия с опытными преподавателями. Помогаем повысить оценки и подготовиться к ОГЭ и ЕГЭ — с 5 по 11 класс.</p>
         <div class="hero-cta">
           <a class="btn primary" href="#teachers">Познакомиться с преподавателями</a>
-          <a class="btn ghost" href="#contact">Связаться</a>
+          <a class="btn ghost" href="#price">Стоимость</a>
         </div>
-      </div>
-      <div class="photo-wrap">
-        <img class="photo" src="repetitors.jpg" alt="Наша команда преподавателей"/>
       </div>
     </section>
 
     <section class="card" id="about">
       <div class="section-title"><h2>О факультете</h2></div>
-      <p>Мы — команда преподавателей лицея с университетским образованием и авторскими методиками. Наша цель — доступное и качественное онлайн‑обучение, которое даёт уверенность и реальные результаты.</p>
+      <p>Мы — команда преподавателей одного лицея с университетским образованием и авторскими методиками. Наша цель — доступное и качественное онлайн‑обучение, которое даёт уверенность и реальные результаты.</p>
       <ul class="card-list">
         <li>🎓 Можно выбрать формат: заниматься только с одним преподавателем или собрать программу по нескольким предметам.</li>
         <li>🎯 Индивидуальный подход к каждому ученику</li>
@@ -58,19 +54,24 @@
     <section class="card" id="teachers">
       <div class="section-title"><h2>Наши tutITechers</h2></div>
       <div class="teacher-grid">
-        <a class="btn ghost" href="Sergey/Sergey.html">
-          <img src="Sergey/repetitor.png" alt="Сергей"/>
+        <a class="btn ghost" href="Inf/Inf.html">
+          <img src="Inf/repetitor.png" alt="Горячев Сергей Николаевич" data-subject="inf"/>
           <span class="teacher-name">Горячев Сергей Николаевич</span>
           <span class="teacher-role">Информатика</span>
           <span class="teacher-subrole">Основатель факультета</span>
         </a>
-        <a class="btn ghost" href="Irina/Irina.html">
-          <img src="Irina/repetitor.png" alt="Ирина"/>
-          <span class="teacher-name">Старцева Ирина Анатольевна</span>
+        <a class="btn ghost" href="Rus/Rus.html">
+          <img src="Rus/repetitor.png" alt="Ераполова Валентина Александровна" data-subject="rus"/>
+          <span class="teacher-name">Ераполова Валентина Александровна</span>
+          <span class="teacher-role">Русский язык</span>
+        </a>
+        <a class="btn ghost" href="Mat/Mat.html">
+          <img src="Mat/repetitor.png" alt="Логинова Анжелика Сергеевна" data-subject="mat"/>
+          <span class="teacher-name">Логинова Анжелика Сергеевна</span>
           <span class="teacher-role">Математика</span>
         </a>
-        <a class="btn ghost" href="Svetlana/Svetlana.html">
-          <img src="Svetlana/repetitor.png" alt="Светлана"/>
+        <a class="btn ghost" href="Angl/Angl.html">
+          <img src="Angl/repetitor.png" alt="Светлана"/>
           <span class="teacher-name">Волгина Светлана Михайловна</span>
           <span class="teacher-role">Английский язык</span>
         </a>
@@ -95,9 +96,26 @@
 
     <section class="card" id="reviews">
       <div class="section-title"><h2>Отзывы учеников</h2></div>
-      <details><summary>Анна (11 класс):</summary><p>Сдала ЕГЭ по математике на 88 баллов — раньше едва дотягивала до тройки. Ирина дала структуру и веру в себя.</p></details>
-      <details><summary>Алексей (9 класс):</summary><p>Понравилась интерактивная доска: будто решаем задачи за одной партой. Сложные темы Дмитрий объясняет просто и понятно.</p></details>
+      <p class="reviews-caption">Лучшие отзывы о нашей работе</p>
+      <div class="reviews-gallery">
+        <figure class="review-card" data-review="reviews/Отзыв1.jpg" aria-labelledby="review-1-caption">
+          <img src="reviews/Отзыв1.jpg" alt="Отзыв ученика о нашей работе"/>
+          <button type="button" aria-label="Увеличить отзыв"></button>
+        </figure>
+        <figure class="review-card" data-review="reviews/Отзыв2.jpg" aria-labelledby="review-2-caption">
+          <img src="reviews/Отзыв2.jpg" alt="Отзыв родителей о наших занятиях"/>
+          <button type="button" aria-label="Увеличить отзыв"></button>
+        </figure>
+      </div>
     </section>
+    <div class="reviews-modal" id="reviewsModal" aria-hidden="true" role="dialog">
+      <div class="reviews-modal__inner">
+        <button class="reviews-modal__close" type="button" data-close>Закрыть</button>
+        <div class="reviews-modal__media">
+          <img src="" alt="Просмотр отзыва" id="reviewsModalImage"/>
+        </div>
+      </div>
+    </div>
 
     <section class="card" id="join">
       <div class="section-title"><h2>Как начать обучение</h2></div>
@@ -126,9 +144,8 @@
     <section class="card" id="price">
       <div class="section-title"><h2>💰 Стоимость</h2></div>
       <ul class="card-list">
-        <li>45 минут — 1500 ₽</li>
-        <li>60 минут — 2000 ₽</li>
-        <li>90 минут — 3000 ₽</li>
+        <li>ОГЭ — 2000 ₽ за час</li>
+        <li>ЕГЭ — 2500 ₽ за час</li>
       </ul>
     </section>
 
@@ -150,15 +167,11 @@
       </ol>
     </section>
 
-    <section class="card" id="contact">
-      <div class="section-title"><h2>Связь</h2></div>
-      <p>📲 Напишите нам — поможем подобрать преподавателя и стартовать комфортно.</p>
-      <a class="btn full-accent" href="https://t.me/tutITech_official" target="_blank">Написать в Telegram</a>
-    </section>
   </main>
 </div>
 <script src="js/animateCardsOnScroll.js" defer></script>
 <script src="js/activeNavHighlight.js" defer></script>
 <script src="js/mobileNavToggle.js" defer></script>
+<script src="js/reviewsModal.js" defer></script>
 </body>
 </html>
