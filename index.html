@@ -3,17 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="tutITech — онлайн-факультет с командой репетиторов по информатике, математике, русскому и английскому языку. Помогаем ученикам 5–11 классов подготовиться к ОГЭ и ЕГЭ." />
+  <meta name="keywords" content="tutITech, онлайн репетитор, подготовка к экзаменам, ЕГЭ, ОГЭ, дистанционное обучение, школа онлайн, репетиторы для школьников, индивидуальные занятия" />
+  <meta name="author" content="tutITech" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="tutITech" />
+  <meta property="og:title" content="tutITech — Образование будущего" />
+  <meta property="og:description" content="Команда репетиторов tutITech помогает школьникам уверенно готовиться к ОГЭ и ЕГЭ по IT-предметам, математике, русскому и английскому языку." />
+  <meta property="og:url" content="https://tutitech.ru/" />
+  <meta property="og:image" content="https://tutitech.ru/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="tutITech — Образование будущего" />
+  <meta name="twitter:description" content="Индивидуальные онлайн-занятия по ключевым предметам с опытными преподавателями tutITech." />
+  <meta name="twitter:image" content="https://tutitech.ru/logo.png" />
+  <link rel="canonical" href="https://tutitech.ru/" />
+  <link rel="icon" href="logo.png" type="image/png" />
   <title>tutITech — Образование будущего</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/buttons.css">
+  <!-- Resource hints for external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <!-- Preload critical CSS -->
+  <link rel="preload" href="css/base.css" as="style" />
+  <link rel="preload" href="css/layout.css" as="style" />
+  <link rel="preload" href="css/buttons.css" as="style" />
+  <!-- Stylesheets -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/buttons.css" />
 </head>
 <body>
 <div class="layout">
   <aside class="sidebar">
-    <div class="brand"><a href="index.html"><div class="brand-logo" aria-label="tutITech логотип">
-      <img src="logo.png" alt="tutITech логотип"/>
+    <div class="brand"><a href="/"><div class="brand-logo" aria-label="tutITech логотип">
+      <img src="logo.png" alt="tutITech логотип" width="40" height="40" />
     </div><h1>tutITech</h1></a><button class="menu-toggle" aria-controls="toc" aria-expanded="false">Меню</button></div>
     <nav class="nav" id="toc">
       <a href="#hero" class="active">Главная</a>
@@ -54,24 +82,24 @@
     <section class="card" id="teachers">
       <div class="section-title"><h2>Наши tutITechers</h2></div>
       <div class="teacher-grid">
-        <a class="btn ghost" href="Inf/Inf.html">
-          <img src="Inf/repetitor.png" alt="Горячев Сергей Николаевич" data-subject="inf"/>
+        <a class="btn ghost" href="Inf/">
+          <img src="Inf/repetitor.png" alt="Горячев Сергей Николаевич" data-subject="inf" loading="lazy" width="200" height="200" />
           <span class="teacher-name">Горячев Сергей Николаевич</span>
           <span class="teacher-role">Информатика</span>
           <span class="teacher-subrole">Основатель факультета</span>
         </a>
-        <a class="btn ghost" href="Rus/Rus.html">
-          <img src="Rus/repetitor.png" alt="Ераполова Валентина Александровна" data-subject="rus"/>
+        <a class="btn ghost" href="Rus/">
+          <img src="Rus/repetitor.png" alt="Ераполова Валентина Александровна" data-subject="rus" loading="lazy" width="200" height="200" />
           <span class="teacher-name">Ераполова Валентина Александровна</span>
           <span class="teacher-role">Русский язык</span>
         </a>
-        <a class="btn ghost" href="Mat/Mat.html">
-          <img src="Mat/repetitor.png" alt="Логинова Анжелика Сергеевна" data-subject="mat"/>
+        <a class="btn ghost" href="Mat/">
+          <img src="Mat/repetitor.png" alt="Логинова Анжелика Сергеевна" data-subject="mat" loading="lazy" width="200" height="200" />
           <span class="teacher-name">Логинова Анжелика Сергеевна</span>
           <span class="teacher-role">Математика</span>
         </a>
-        <a class="btn ghost" href="Angl/Angl.html">
-          <img src="Angl/repetitor.png" alt="Светлана"/>
+        <a class="btn ghost" href="Angl/">
+          <img src="Angl/repetitor.png" alt="Светлана" loading="lazy" width="200" height="200" />
           <span class="teacher-name">Волгина Светлана Михайловна</span>
           <span class="teacher-role">Английский язык</span>
         </a>
@@ -90,7 +118,7 @@
     <section class="card" id="team-plus">
       <div class="section-title"><h2>В чём плюс заниматься с нами</h2></div>
       <ul class="card-list">
-        <li>🤝 Командная работа преподавателей: быстро закрываем пробелы между предметами. Если один преподаватель видит пробелы по другому предмету, необходимые для решения текущих задач, оперативно подключается другой преподаватель.</li>
+        <li>🤝 Командная работа преподавателей: быстро закрываем пробелы по смежным предметам. Если один преподаватель видит пробелы по другому предмету, необходимые для решения текущих задач, оперативно подключается другой преподаватель.</li>
       </ul>
     </section>
 
@@ -99,11 +127,11 @@
       <p class="reviews-caption">Лучшие отзывы о нашей работе</p>
       <div class="reviews-gallery">
         <figure class="review-card" data-review="reviews/Отзыв1.jpg" aria-labelledby="review-1-caption">
-          <img src="reviews/Отзыв1.jpg" alt="Отзыв ученика о нашей работе"/>
+          <img src="reviews/Отзыв1.jpg" alt="Отзыв ученика о нашей работе" loading="lazy" />
           <button type="button" aria-label="Увеличить отзыв"></button>
         </figure>
         <figure class="review-card" data-review="reviews/Отзыв2.jpg" aria-labelledby="review-2-caption">
-          <img src="reviews/Отзыв2.jpg" alt="Отзыв родителей о наших занятиях"/>
+          <img src="reviews/Отзыв2.jpg" alt="Отзыв родителей о наших занятиях" loading="lazy" />
           <button type="button" aria-label="Увеличить отзыв"></button>
         </figure>
       </div>
