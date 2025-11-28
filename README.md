@@ -11,6 +11,35 @@
 - Перед релизом замените домен `https://tutitech.ru/` в канонических и OG-ссылках, если у вас другое имя сайта.
 - При необходимости создайте `robots.txt` и `sitemap.xml` в корне и добавьте ссылки на них в `README`.
 
+## Публикация на GitHub Pages
+
+1. **Создайте репозиторий на GitHub** (например, `username.github.io` для корневого домена или любой другой репозиторий)
+
+2. **Загрузите файлы в репозиторий**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/username/repository-name.git
+   git push -u origin main
+   ```
+
+3. **Включите GitHub Pages**
+   - Перейдите в Settings → Pages вашего репозитория
+   - В разделе "Source" выберите ветку `main` и папку `/ (root)`
+   - Нажмите Save
+
+4. **Важно:**
+   - Файл `.nojekyll` уже создан в корне проекта — он отключает обработку Jekyll, что необходимо для корректной работы сайта
+   - Все ссылки в проекте используют относительные пути и адаптированы для GitHub Pages
+   - Сайт будет доступен по адресу `https://username.github.io/repository-name/` (или `https://username.github.io/` для репозитория `username.github.io`)
+
+5. **Обновление сайта**
+   - Внесите изменения локально
+   - Выполните `git add .`, `git commit -m "Update"`, `git push`
+   - Изменения появятся на сайте через несколько минут
+
 ## Выгрузка на VPS с Debian + Nginx
 Ниже пример для домена `tutitech.ru`. Выполняйте команды под пользователем с sudo.
 
