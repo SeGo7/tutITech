@@ -8,8 +8,30 @@
   --ring: rgba(15,23,42,.08);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--ink);font-size:20px;line-height:1.9}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--ink);font-size:20px;line-height:1.9;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
 p{margin:12px 0 18px}
 ul,ol{margin:12px 0 20px 26px}
 li{margin:8px 0}
 html{scroll-behavior:smooth}
+/* Better touch targets and mobile interactions */
+a,button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(59,130,246,0.1)}
+/* Prevent text size adjustment on iOS */
+@media screen and (max-width:900px){
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{font-size:17px;line-height:1.75}
+  p{margin:10px 0 16px;font-size:16px;line-height:1.6}
+  ul,ol{margin:10px 0 18px 22px}
+  li{margin:6px 0;font-size:16px;line-height:1.6}
+}
+@media screen and (max-width:480px){
+  body{font-size:16px;line-height:1.7}
+  p{margin:8px 0 14px;font-size:15px;line-height:1.6}
+  ul,ol{margin:8px 0 16px 20px}
+  li{margin:5px 0;font-size:15px;line-height:1.6}
+}
+@media screen and (max-width:360px){
+  body{font-size:15px;line-height:1.65}
+  p{margin:6px 0 12px;font-size:14px;line-height:1.6}
+  ul,ol{margin:6px 0 14px 18px}
+  li{margin:4px 0;font-size:14px;line-height:1.6}
+}

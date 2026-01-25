@@ -4,12 +4,41 @@
 @keyframes sheen{to{transform:translateX(120%) rotate(10deg)}}
 .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff}
 .btn.ghost{background:var(--card);border:1px solid var(--ring);color:var(--ink)}
-.btn.full-accent{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn.full-accent{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:none;display:inline-flex;align-items:center;gap:8px;font-size:18px;padding:16px 32px}
 /* contact pill accent */
 .pill.contact{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:none;display:inline-flex;align-items:center;gap:8px}
 .telegram-icon{width:18px;height:18px;fill:currentColor;flex-shrink:0}
+.vk-icon{width:18px;height:18px;fill:currentColor;flex-shrink:0}
+.avito-icon{width:18px;height:18px;fill:currentColor;flex-shrink:0}
 /* responsive tweaks for buttons */
+@media(max-width:900px){
+  .btn{padding:14px 20px;border-radius:12px;font-size:16px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+  .btn.primary{font-size:16px;padding:14px 24px}
+  .btn.full-accent{font-size:16px;padding:14px 24px}
+  .telegram-icon{width:18px;height:18px}
+  .vk-icon{width:18px;height:18px}
+  .avito-icon{width:18px;height:18px}
+}
 @media(max-width:760px){
-  .btn{padding:12px 16px;border-radius:10px}
+  .btn{padding:12px 18px;border-radius:10px;font-size:15px;min-height:44px}
+  .btn.primary{font-size:15px;padding:12px 20px}
+  .btn.full-accent{font-size:15px;padding:12px 20px}
+  .telegram-icon{width:17px;height:17px}
+  .vk-icon{width:17px;height:17px}
+  .avito-icon{width:17px;height:17px}
+}
+@media(max-width:480px){
+  .btn{padding:12px 16px;border-radius:10px;font-size:14px;min-height:44px;width:100%;justify-content:center}
+  .btn.primary,.btn.full-accent{font-size:14px;padding:12px 18px}
+  .hero-cta .btn{width:100%}
   .telegram-icon{width:16px;height:16px}
+  .vk-icon{width:16px;height:16px}
+}
+@media(max-width:360px){
+  .btn{padding:10px 14px;border-radius:8px;font-size:13px;min-height:40px}
+  .btn.primary{font-size:13px;padding:10px 16px}
+  .btn.full-accent{font-size:13px;padding:10px 16px}
+  .telegram-icon{width:15px;height:15px}
+  .vk-icon{width:15px;height:15px}
+  .avito-icon{width:15px;height:15px}
 }
