@@ -8,6 +8,7 @@
   --ring: rgba(15,23,42,.08);
 }
 *{margin:0;padding:0;box-sizing:border-box}
+img{max-width:100%;height:auto}
 body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--ink);font-size:20px;line-height:1.9;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
 p{margin:12px 0 18px}
 ul,ol{margin:12px 0 20px 26px}
