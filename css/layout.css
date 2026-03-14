@@ -29,6 +29,9 @@ main{display:flex;flex-direction:column;gap:32px;min-width:0}
 .hero p{color:var(--muted)}
 .hero-subtitle{font-size:20px;font-weight:600;margin-bottom:12px;color:var(--ink)}
 .hero-cta{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
+.hero-metrics{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:4px;color:var(--muted);font-size:14px}
+.hero-metric{padding:6px 10px;border-radius:999px;border:1px solid var(--ring);background:rgba(255,255,255,.7);backdrop-filter:blur(10px)}
+.hero-note{font-size:13px;color:var(--muted);margin-top:10px;max-width:520px}
 .photo-wrap{display:grid;place-items:center;overflow:hidden;border-radius:18px;min-height:320px;background:transparent;animation:photoEnter 2s forwards}
 @keyframes photoEnter{0%{transform:scale(2) translate(0,0);opacity:0}50%{transform:scale(1) translate(0,0);opacity:1}100%{transform:scale(1) translate(0,0);opacity:1}}
 .photo{width:100%;height:100%;object-fit:contain;object-position:top center;display:block}
@@ -76,6 +79,11 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
 /* Lists as cards */
 .card-list{display:flex;flex-direction:column;gap:14px;margin:14px 0 22px 0;padding:0;list-style:none}
 .card-list li{background:var(--card);border:1px solid var(--ring);border-radius:14px;padding:14px 16px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+
+/* Sticky mobile CTA */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(15,23,42,.96);color:#fff;display:none;align-items:center;justify-content:space-between;gap:10px;z-index:900;backdrop-filter:blur(16px);box-shadow:0 -6px 20px rgba(15,23,42,.6)}
+.sticky-cta__text{font-size:13px;line-height:1.4}
+.sticky-cta__btn{white-space:nowrap}
 
 /* Help list (Irina page) */
 .help-list{list-style:none;margin:12px 0 20px 0;padding:0;display:flex;flex-direction:column;gap:10px}
