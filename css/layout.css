@@ -102,7 +102,7 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
 .card#join p{font-size:18px;margin-bottom:20px;line-height:1.6}
 /* Hero CTA buttons */
 .hero-cta .btn.primary{font-size:18px;padding:16px 28px;display:inline-flex;align-items:center;gap:8px}
-.hero-cta .btn.primary .telegram-icon{width:20px;height:20px;display:inline-block;vertical-align:middle;margin-right:0}
+.hero-cta .btn.primary .vk-icon{width:20px;height:20px;display:inline-block;vertical-align:middle;margin-right:0}
 /* Section intro text */
 .section-intro{font-size:22px;font-weight:600;margin-bottom:24px;line-height:1.5}
 /* Pill spacing */

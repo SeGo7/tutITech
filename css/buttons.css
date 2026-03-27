@@ -7,15 +7,41 @@
 .btn.full-accent{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:none;display:inline-flex;align-items:center;gap:8px;font-size:18px;padding:16px 32px}
 /* contact pill accent */
 .pill.contact{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:none;display:inline-flex;align-items:center;gap:8px}
-.telegram-icon{width:18px;height:18px;fill:currentColor;flex-shrink:0}
-.vk-icon{width:18px;height:18px;fill:currentColor;flex-shrink:0}
-.avito-icon{width:18px;height:18px;fill:currentColor;flex-shrink:0}
+.vk-icon{
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+  display:inline-block;
+  background-color:currentColor;
+  fill:none;
+  /* Replace inline SVG path with mask-based icon */
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns='http%3A//www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M14%2019h-4a8%208%200%200%201%20-8%20-8v-5h4v5a4%204%200%200%200%204%204v-9h4v4.5l.03%200a4.531%204.531%200%200%200%203.97%20-4.496h4l-.342%201.711a6.858%206.858%200%200%201%20-3.658%204.789a5.34%205.34%200%200%201%203.566%204.111l.434%202.389h-4a4.531%204.531%200%200%200%20-3.97%20-4.496v4.5l-.03%20-.008'/%3E%3C/svg%3E");
+  -webkit-mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  -webkit-mask-size:contain;
+  mask-image:url("data:image/svg+xml,%3Csvg%20xmlns='http%3A//www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M14%2019h-4a8%208%200%200%201%20-8%20-8v-5h4v5a4%204%200%200%200%204%204v-9h4v4.5l.03%200a4.531%204.531%200%200%200%203.97%20-4.496h4l-.342%201.711a6.858%206.858%200%200%201%20-3.658%204.789a5.34%205.34%200%200%201%203.566%204.111l.434%202.389h-4a4.531%204.531%200%200%200%20-3.97%20-4.496v4.5l-.03%20-.008'/%3E%3C/svg%3E");
+  mask-repeat:no-repeat;
+  mask-position:center;
+  mask-size:contain;
+}
+.vk-icon path{display:none}
+.avito-icon{
+  width:18px;
+  height:18px;
+  flex-shrink:0;
+  display:inline-block;
+}
+.avito-icon,
+.avito-icon path{
+  stroke:#fff !important;
+  fill:none !important;
+}
 /* responsive tweaks for buttons */
 @media(max-width:900px){
   .btn{padding:14px 20px;border-radius:12px;font-size:16px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
   .btn.primary{font-size:16px;padding:14px 24px}
   .btn.full-accent{font-size:16px;padding:14px 24px}
-  .telegram-icon{width:18px;height:18px}
+  .vk-icon{width:18px;height:18px}
   .vk-icon{width:18px;height:18px}
   .avito-icon{width:18px;height:18px}
 }
@@ -23,7 +49,7 @@
   .btn{padding:12px 18px;border-radius:10px;font-size:15px;min-height:44px}
   .btn.primary{font-size:15px;padding:12px 20px}
   .btn.full-accent{font-size:15px;padding:12px 20px}
-  .telegram-icon{width:17px;height:17px}
+  .vk-icon{width:17px;height:17px}
   .vk-icon{width:17px;height:17px}
   .avito-icon{width:17px;height:17px}
 }
@@ -31,14 +57,14 @@
   .btn{padding:12px 16px;border-radius:10px;font-size:14px;min-height:44px;width:100%;justify-content:center}
   .btn.primary,.btn.full-accent{font-size:14px;padding:12px 18px}
   .hero-cta .btn{width:100%}
-  .telegram-icon{width:16px;height:16px}
+  .vk-icon{width:16px;height:16px}
   .vk-icon{width:16px;height:16px}
 }
 @media(max-width:360px){
   .btn{padding:10px 14px;border-radius:8px;font-size:13px;min-height:40px}
   .btn.primary{font-size:13px;padding:10px 16px}
   .btn.full-accent{font-size:13px;padding:10px 16px}
-  .telegram-icon{width:15px;height:15px}
+  .vk-icon{width:15px;height:15px}
   .vk-icon{width:15px;height:15px}
   .avito-icon{width:15px;height:15px}
 }
