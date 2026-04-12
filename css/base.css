@@ -6,6 +6,8 @@
   --accent-2:#8b5cf6;
   --card:#ffffff;
   --ring: rgba(15,23,42,.08);
+  /* Якоря: отступ чуть больше и масштабируется с высотой экрана (vh + clamp) */
+  --header-scroll-offset: clamp(172px, calc(5.25rem + 12vh), 265px);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 img{max-width:100%;height:auto}
@@ -13,11 +15,15 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--ink);font
 p{margin:12px 0 18px}
 ul,ol{margin:12px 0 20px 26px}
 li{margin:8px 0}
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:calc(var(--header-scroll-offset) + env(safe-area-inset-top, 0px));
+}
 /* Better touch targets and mobile interactions */
 a,button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(59,130,246,0.1)}
 /* Prevent text size adjustment on iOS */
 @media screen and (max-width:900px){
+  :root{--header-scroll-offset:clamp(205px, calc(6rem + 14vh), 300px)}
   html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   body{font-size:17px;line-height:1.75}
   p{margin:10px 0 16px;font-size:16px;line-height:1.6}
@@ -25,6 +31,7 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(59,130,246,0
   li{margin:6px 0;font-size:16px;line-height:1.6}
 }
 @media screen and (max-width:480px){
+  :root{--header-scroll-offset:clamp(238px, calc(6.5rem + 15vh), 320px)}
   body{font-size:16px;line-height:1.7}
   p{margin:8px 0 14px;font-size:15px;line-height:1.6}
   ul,ol{margin:8px 0 16px 20px}
