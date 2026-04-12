@@ -1,16 +1,37 @@
-.layout{display:grid;grid-template-columns:280px 1fr;gap:24px;max-width:1400px;margin:auto;padding:20px}
-@media(max-width:900px){.layout{grid-template-columns:1fr}}
-.sidebar{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow-y:auto;overflow-x:visible;padding-bottom:20px}
-.brand{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.layout{max-width:1200px;margin:auto;padding:18px;padding-top:calc(18px + 180px)}
+.sidebar{
+  position:fixed;
+  top:12px;
+  left:18px;
+  right:18px;
+  width:auto;
+  max-width:1200px;
+  margin-left:auto;
+  margin-right:auto;
+  transform:none;
+  z-index:950;
+  margin-bottom:0;
+}
+.sidebar{background:rgba(255,255,255,.58);backdrop-filter:blur(14px);border:1px solid rgba(15,23,42,.08);border-radius:18px;box-shadow:0 10px 40px rgba(15,23,42,.08)}
+.sidebar{padding:12px 14px}
+.sidebar{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:0;flex:0 0 auto}
 .brand a{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
 .brand-logo{display:inline-block}
 .brand-logo svg{width:64px;height:64px;display:block}
 .brand-logo img{width:64px;height:64px;display:block}
-.nav a{display:block;padding:10px 12px;margin-bottom:6px;border-radius:8px;text-decoration:none;color:var(--muted);transition:.3s;border-left:3px solid transparent;font-size:15px}
-.nav a.active,.nav a:hover{background:var(--card);color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.08);border-left-color:var(--accent)}
+.nav{display:flex;align-items:center;gap:8px;flex:1 1 520px;min-width:260px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 2px 6px 2px;scroll-snap-type:x proximity}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:999px;text-decoration:none;color:var(--muted);transition:.2s;border:1px solid transparent;font-size:15px;line-height:1}
+.nav a{scroll-snap-align:start;white-space:nowrap}
+.nav a.active,.nav a:hover{background:rgba(59,130,246,.10);color:var(--ink);border-color:rgba(59,130,246,.18)}
+.nav{mask-image:linear-gradient(to right, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);-webkit-mask-image:linear-gradient(to right, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%)}
 .pill{display:flex;align-items:center;gap:8px;margin-top:12px;padding:8px 14px;border:1px solid var(--ring);border-radius:999px;text-decoration:none;color:var(--ink);width:fit-content}
 .sidebar .pill.contact{display:flex;max-width:100%}
 .sidebar .pill.contact + .pill.contact{margin-top:8px}
+.sidebar-contacts{display:flex;align-items:center;gap:8px;flex:0 0 auto;margin-top:0;margin-bottom:0}
+.sidebar-contacts .pill.contact{margin-top:0}
+.sidebar-contacts .pill.contact + .pill.contact{margin-top:0}
 main{display:flex;flex-direction:column;gap:32px;min-width:0}
 .card{background:var(--card);padding:24px;border-radius:18px;border:1px solid var(--ring);box-shadow:0 4px 20px rgba(0,0,0,.06);opacity:0;transform:translateY(20px);transition:.6s}
 .card.show{opacity:1;transform:none}
@@ -35,17 +56,50 @@ main{display:flex;flex-direction:column;gap:32px;min-width:0}
 .photo-wrap{display:grid;place-items:center;overflow:hidden;border-radius:18px;min-height:320px;background:transparent;animation:photoEnter 2s forwards}
 @keyframes photoEnter{0%{transform:scale(2) translate(0,0);opacity:0}50%{transform:scale(1) translate(0,0);opacity:1}100%{transform:scale(1) translate(0,0);opacity:1}}
 .photo{width:100%;height:100%;object-fit:contain;object-position:top center;display:block}
-.teacher-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
-.teacher-grid a{display:block;text-align:center;transition:.3s}
-.teacher-grid a:hover{transform:translateY(-2px)}
-.teacher-grid a img{width:100%;max-width:340px;height:340px;object-fit:contain;object-position:center;border-radius:14px;display:block;margin:0 auto 10px;background:transparent;transition:.4s;padding:20px;box-sizing:border-box}
-.teacher-grid a img[data-subject="rus"]{object-position:center;padding-top:28px;padding-bottom:12px}
-.teacher-grid a img[data-subject="inf"]{padding:28px}
-.teacher-grid a:hover img{transform:scale(1.03)}
-/* Teacher card text layout */
-.teacher-grid a .teacher-name{display:block;font-weight:800;margin-top:8px;color:var(--ink);font-size:18px}
-.teacher-grid a .teacher-role{display:block;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:16px}
-.teacher-grid a .teacher-subrole{display:block;color:var(--muted);margin-top:2px;opacity:.9;font-size:15px}
+.teacher-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+
+/* Poster-style teacher tiles: tall image, name under card */
+.teacher-grid--poster{
+  grid-template-columns:repeat(auto-fit, 240px);
+  justify-content:space-between;
+}
+.teacher-grid--poster .teacher-item{display:flex;flex-direction:column}
+.teacher-grid--poster .teacher-poster{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  text-decoration:none;
+  color:inherit;
+  border-radius:18px;
+  border:1px solid var(--ring);
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(10px);
+  box-shadow:0 12px 38px rgba(15,23,42,.10);
+  overflow:hidden;
+  padding:12px;
+  height:360px;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.teacher-grid--poster .teacher-poster:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 52px rgba(59,130,246,.16);
+  border-color:rgba(59,130,246,.22);
+}
+.teacher-grid--poster .teacher-poster img{
+  width:100%;
+  flex:1 1 auto;
+  height:auto;
+  aspect-ratio:1/1;
+  object-fit:contain;
+  object-position:center;
+  border-radius:14px;
+  background:rgba(255,255,255,.75);
+  border:1px solid var(--ring);
+  padding:12px;
+  box-sizing:border-box;
+}
+.teacher-grid--poster .teacher-poster .teacher-role{color:var(--muted);font-size:15px;line-height:1.35}
+.teacher-grid--poster .teacher-poster .teacher-subrole{color:var(--muted);font-size:14px;opacity:.9;line-height:1.35}
 .reviews-caption{margin:0 0 14px;color:var(--muted)}
 .reviews-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .reviews-gallery .review-card{background:var(--card);border-radius:16px;border:1px solid var(--ring);box-shadow:0 4px 12px rgba(0,0,0,.08);padding:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;transition:transform .2s ease, box-shadow .2s ease}
@@ -121,16 +175,16 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
 
 /* Mobile adaptations */
 @media(max-width:900px){
-  .layout{grid-template-columns:1fr;padding:12px;gap:16px}
-  .sidebar{position:static;max-height:none;overflow:visible;padding-bottom:16px;margin-bottom:8px}
-  .brand{margin-bottom:16px}
+  .layout{padding:12px;padding-top:calc(12px + 240px)}
+  .sidebar{top:10px;left:12px;right:12px;width:auto;padding:10px 12px}
+  .brand{margin-bottom:0}
   .menu-toggle{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;min-width:44px;min-height:44px;border:1px solid var(--ring);border-radius:10px;background:var(--card);color:var(--ink);cursor:pointer;margin-left:auto;font-size:14px;font-weight:600;transition:all .2s ease}
   .menu-toggle[aria-expanded="true"]{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:none}
-  .sidebar .nav{display:none;margin-top:12px}
-  .sidebar .nav.is-open{display:block;max-height:calc(100vh - 180px);overflow-y:auto;overflow-x:visible;-webkit-overflow-scrolling:touch;padding:8px 0}
-  .nav a{padding:14px 16px;margin-bottom:4px;font-size:15px;min-height:44px;display:flex;align-items:center}
-  .pill{min-height:44px;padding:12px 16px;font-size:15px;margin-top:8px;display:inline-flex;align-items:center;gap:8px;width:fit-content}
-  .sidebar .pill.contact{display:inline-flex;margin-top:0;margin-right:8px}
+  .sidebar .nav{display:none;flex-basis:100%;margin-top:6px}
+  .sidebar .nav.is-open{display:flex;flex-wrap:nowrap;gap:8px;padding:6px 0}
+  .nav a{min-height:44px;padding:12px 14px;font-size:15px}
+  .pill{min-height:44px;padding:12px 14px;font-size:15px;margin-top:0;display:inline-flex;align-items:center;gap:8px;width:fit-content}
+  .sidebar-contacts{flex-basis:100%;justify-content:flex-start;flex-wrap:wrap;margin-top:4px}
   .sidebar .pill.contact + .pill.contact{margin-top:0}
   main{gap:24px}
   .card{padding:20px;border-radius:16px;gap:16px}
@@ -142,8 +196,8 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .hero-cta{flex-direction:column;gap:12px;width:100%}
   .hero-cta .btn{width:100%;justify-content:center;text-align:center}
   .hero-cta .btn.primary{font-size:16px;padding:14px 24px}
-  .teacher-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
-  .teacher-grid a img{max-width:100%;height:auto;aspect-ratio:1;object-fit:contain;padding:16px}
+  .teacher-grid{grid-template-columns:1fr;gap:14px}
+  .teacher-grid--poster .teacher-poster img{height:240px}
   .reviews-gallery{grid-template-columns:1fr;gap:12px}
   .reviews-gallery .review-card{padding:10px}
   .step-button{padding:16px;gap:12px}
@@ -155,6 +209,12 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .reviews-modal__inner{padding:16px;max-width:95vw;margin:12px}
   .reviews-modal__close{top:8px;right:8px;padding:10px 14px;min-width:44px;min-height:44px;font-size:14px}
   .reviews-modal__media{max-height:85vh}
+}
+
+/* Desktop: hide hamburger, keep nav visible */
+@media(min-width:901px){
+  .menu-toggle{display:none}
+  .sidebar .nav{display:flex !important}
 }
 @media(max-width:760px){
   body{font-size:17px;line-height:1.75}
@@ -169,7 +229,7 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .hero p{font-size:16px;line-height:1.6}
   .hero-subtitle{font-size:16px;margin-bottom:8px}
   .photo-wrap{min-height:240px;border-radius:14px}
-  .teacher-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+  .teacher-grid{grid-template-columns:1fr;gap:12px}
   .teacher-grid a .teacher-name{font-size:15px;margin-top:6px}
   .teacher-grid a .teacher-role{font-size:14px;margin-top:3px}
   .teacher-grid a .teacher-subrole{font-size:13px}
@@ -187,9 +247,12 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
 }
 @media(max-width:480px){
   body{font-size:16px;line-height:1.7}
-  .layout{padding:10px;gap:14px}
+  .layout{padding:10px;padding-top:calc(10px + 260px)}
+  .teacher-grid--poster .teacher-poster{padding:10px}
+  .teacher-grid--poster .teacher-poster img{height:220px;padding:10px}
   .brand{margin-bottom:12px;gap:10px}
   .brand h1{font-size:18px}
+  .sidebar{left:10px;right:10px}
   .brand-logo svg{width:40px;height:40px}
   .brand-logo img{width:40px;height:40px}
   .menu-toggle{padding:10px 14px;font-size:13px;min-width:40px;min-height:40px}
@@ -206,8 +269,9 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .hero-cta{gap:10px}
   .hero-cta .btn.primary{font-size:15px;padding:12px 20px}
   .photo-wrap{min-height:200px;border-radius:12px}
-  .teacher-grid{grid-template-columns:1fr 1fr;gap:12px}
-  .teacher-grid a img{height:auto;aspect-ratio:1;padding:12px}
+  .teacher-grid{grid-template-columns:1fr;gap:10px}
+  .teacher-grid a{gap:12px;padding:12px}
+  .teacher-grid a img{width:72px;height:72px;flex-basis:72px;padding:9px}
   .teacher-grid a .teacher-name{font-size:14px;margin-top:4px}
   .teacher-grid a .teacher-role{font-size:13px;margin-top:2px}
   .teacher-grid a .teacher-subrole{font-size:12px}
@@ -239,7 +303,8 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .hero p{font-size:14px}
   .hero-cta .btn.primary{font-size:14px;padding:12px 18px}
   .teacher-grid{grid-template-columns:1fr;gap:10px}
-  .teacher-grid a img{max-width:100%;padding:10px}
+  .teacher-grid a{gap:10px;padding:10px}
+  .teacher-grid a img{width:66px;height:66px;flex-basis:66px;padding:8px}
   .card-list li{padding:10px;font-size:13px}
   .step-button{padding:10px;gap:8px}
   .step-badge{width:28px;height:28px;font-size:13px}

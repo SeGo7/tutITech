@@ -48,7 +48,7 @@
 </head>
 <body>
 <div class="layout">
-  <aside class="sidebar">
+  <aside class="sidebar" role="banner">
     <div class="brand">
       <a href="./">
         <div class="brand-logo" aria-label="ITtutor логотип">
@@ -61,17 +61,19 @@
     <nav class="nav" id="toc">
       <a href="#hero" class="active">Главная</a>
       <a href="#about">Что получите</a>
-      <a href="#teachers">Преподаватели</a>
       <a href="#format">Как проходят занятия</a>
+      <a href="#teachers">Преподаватели</a>
+      <a href="#team-plus">Отличия</a>
       <a href="#reviews">Результаты и отзывы</a>
-      <a href="#join">Бесплатная консультация</a>
+      <a href="#join">Консультация</a>
       <a href="#price">Цены</a>
     </nav>
+    <div class="sidebar-contacts" aria-label="Контакты">
     <a class="pill contact" href="https://vk.com/sergey_goriachev" target="_blank">
       <svg class="vk-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12.785 16.241s.336-.041.51-.25c.098-.134.098-.385.098-.385s-.014-1.095.461-1.253c.47-.155 1.075.103 1.687.74.477.488.835.902 1.24.902.31 0 .223-.202.223-.202l-.31-1.095c-.02-.04-.14-.202-.59-.202-.31 0-.59.103-.59.103s-.44-.31-.59-.515c-.14-.19-.31-.515-.31-.515s.014-.31.014-.515c0-.31-.014-.515-.014-.515s.14-.34.31-.515c.15-.206.59-.515.59-.515s.28-.103.59-.103c.45 0 .57-.163.59-.202l.31-1.095s.087-.202-.223-.202c-.405 0-.763.414-1.24.902-.612.637-1.217.895-1.687.74-.47-.158-.461-1.253-.461-1.253s0-.25-.098-.385c-.174-.21-.51-.25-.51-.25h-1.38s-.31.01-.51.25c-.098.134-.098.385-.098.385s.014 1.095-.461 1.253c-.47.155-1.075-.103-1.687-.74-.477-.488-.835-.902-1.24-.902-.31 0-.223.202-.223.202l.31 1.095c.02.04.14.202.59.202.31 0 .59-.103.59-.103s.44.31.59.515c.14.19.31.515.31.515s-.014.31-.014.515c0 .31.014.515.014.515s-.14.34-.31.515c-.15.206-.59.515-.59.515s-.28.103-.59.103c-.45 0-.57.163-.59.202l-.31 1.095s-.087.202.223.202c.405 0 .763-.414 1.24-.902.612-.637 1.217-.895 1.687-.74.47.158.461 1.253.461 1.253s0 .25.098.385c.174.21.51.25.51.25h1.38z"/>
       </svg>
-      Связаться
+      Мы Вконтакте
     </a>
     <a class="pill contact" href="https://t.me/sergey_v1_0" target="_blank" rel="noopener">
       <svg class="tg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -96,6 +98,7 @@
       </svg>
       Avito
     </a>
+    </div>
   </aside>
   <main>
     <section class="card hero hero-single" id="hero">
@@ -178,28 +181,32 @@
 
     <section class="card" id="teachers">
       <div class="section-title"><h2>Преподаватели ITtutor</h2></div>
-      <div class="teacher-grid">
-        <a class="btn ghost" href="Inf/">
-          <img src="Inf/repetitor.png" alt="Горячев Сергей Николаевич" data-subject="inf" loading="lazy" width="200" height="200" />
-          <span class="teacher-name">Горячев Сергей Николаевич</span>
-          <span class="teacher-role">Информатика (ОГЭ / ЕГЭ)</span>
-          <span class="teacher-subrole">Основатель факультета, учитель топ‑100 школы РФ</span>
-        </a>
-        <a class="btn ghost" href="Rus/">
-          <img src="Rus/repetitor.png" alt="Ераполова Валентина Александровна" data-subject="rus" loading="lazy" width="200" height="200" />
-          <span class="teacher-name">Ераполова Валентина Александровна</span>
-          <span class="teacher-role">Русский язык (ОГЭ / ЕГЭ)</span>
-        </a>
-        <a class="btn ghost" href="Mat/">
-          <img src="Mat/repetitor.png" alt="Логинова Анжелика Сергеевна" data-subject="mat" loading="lazy" width="200" height="200" />
-          <span class="teacher-name">Логинова Анжелика Сергеевна</span>
-          <span class="teacher-role">Профильная математика</span>
-        </a>
-        <a class="btn ghost" href="Angl/">
-          <img src="Angl/repetitor.png" alt="Светлана" loading="lazy" width="200" height="200" />
-          <span class="teacher-name">Волгина Светлана Михайловна</span>
-          <span class="teacher-role">Английский язык</span>
-        </a>
+      <div class="teacher-grid teacher-grid--poster">
+        <div class="teacher-item">
+          <a class="teacher-poster" href="Inf/">
+            <img src="Inf/repetitor.png" alt="Горячев Сергей Николаевич" data-subject="inf" loading="lazy" width="240" height="240" />
+            <span class="teacher-role">Информатика (ОГЭ / ЕГЭ)</span>
+            <span class="teacher-subrole">Основатель факультета</span>
+          </a>
+        </div>
+        <div class="teacher-item">
+          <a class="teacher-poster" href="Rus/">
+            <img src="Rus/repetitor.png" alt="Ераполова Валентина Александровна" data-subject="rus" loading="lazy" width="240" height="240" />
+            <span class="teacher-role">Русский язык (ОГЭ / ЕГЭ)</span>
+          </a>
+        </div>
+        <div class="teacher-item">
+          <a class="teacher-poster" href="Mat/">
+            <img src="Mat/repetitor.png" alt="Логинова Анжелика Сергеевна" data-subject="mat" loading="lazy" width="240" height="240" />
+            <span class="teacher-role">Профильная математика</span>
+          </a>
+        </div>
+        <div class="teacher-item">
+          <a class="teacher-poster" href="Angl/">
+            <img src="Angl/repetitor.png" alt="Волгина Светлана Михайловна" loading="lazy" width="240" height="240" />
+            <span class="teacher-role">Английский язык</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -283,7 +290,7 @@
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <path d="M14 19h-4a8 8 0 0 1 -8 -8v-5h4v5a4 4 0 0 0 4 4v-9h4v4.5l.03 0a4.531 4.531 0 0 0 3.97 -4.496h4l-.342 1.711a6.858 6.858 0 0 1 -3.658 4.789a5.34 5.34 0 0 1 3.566 4.111l.434 2.389h-4a4.531 4.531 0 0 0 -3.97 -4.496v4.5l-.03 -.008" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        Связаться
+        Мы Вконтакте
       </a>
     </section>
 

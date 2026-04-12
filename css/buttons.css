@@ -5,8 +5,54 @@
 .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff}
 .btn.ghost{background:var(--card);border:1px solid var(--ring);color:var(--ink)}
 .btn.full-accent{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:none;display:inline-flex;align-items:center;gap:8px;font-size:18px;padding:16px 32px}
-/* contact pill accent */
-.pill.contact{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;border:none;display:inline-flex;align-items:center;gap:8px}
+/* Contact buttons (glass) */
+.pill.contact{
+  position:relative;
+  border-radius:999px;
+  border:1px solid rgba(15,23,42,.10);
+  background:
+    radial-gradient(120% 140% at 10% 0%, rgba(59,130,246,.20), transparent 55%),
+    radial-gradient(120% 140% at 100% 0%, rgba(139,92,246,.16), transparent 60%),
+    rgba(255,255,255,.55);
+  color:var(--ink);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  box-shadow:0 10px 30px rgba(15,23,42,.10);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+.pill.contact::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:inherit;
+  padding:1px;
+  background:linear-gradient(135deg, rgba(59,130,246,.55), rgba(139,92,246,.45), rgba(59,130,246,.25));
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  opacity:.55;
+  pointer-events:none;
+}
+.pill.contact::after{
+  content:"";
+  position:absolute;
+  inset:-40% -60%;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);
+  transform:translateX(-120%) rotate(10deg);
+  opacity:.55;
+  pointer-events:none;
+}
+.pill.contact:hover{
+  transform:translateY(-1px);
+  box-shadow:0 16px 44px rgba(59,130,246,.18);
+  border-color:rgba(59,130,246,.22);
+}
+.pill.contact:hover::after{animation:sheen 1.1s ease}
+.pill.contact:active{transform:translateY(0);box-shadow:0 10px 30px rgba(15,23,42,.10)}
+.pill.contact svg{opacity:.95}
 .tg-icon,.phone-icon{
   width:18px;
   height:18px;
@@ -39,8 +85,8 @@
 }
 .avito-icon,
 .avito-icon path{
-  stroke:#fff !important;
-  fill:none !important;
+  stroke:currentColor;
+  fill:none;
 }
 /* responsive tweaks for buttons */
 @media(max-width:900px){
