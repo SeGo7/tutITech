@@ -1,4 +1,8 @@
-.layout{max-width:1200px;margin:auto;padding:18px;padding-top:calc(18px + 180px)}
+.layout{
+  --layout-top-gap:clamp(100px,14vh,168px);
+  max-width:1200px;margin:auto;padding:18px;
+  padding-top:calc(18px + env(safe-area-inset-top,0px) + var(--layout-top-gap))
+}
 .sidebar{
   position:fixed;
   top:12px;
@@ -175,7 +179,11 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
 
 /* Mobile adaptations */
 @media(max-width:900px){
-  .layout{padding:12px;padding-top:calc(12px + 240px)}
+  .layout{
+    --layout-top-gap:clamp(72px,18vh,118px);
+    padding:12px;
+    padding-top:calc(12px + env(safe-area-inset-top,0px) + var(--layout-top-gap))
+  }
   .sidebar{top:10px;left:12px;right:12px;width:auto;padding:10px 12px}
   .brand{margin-bottom:0}
   .menu-toggle{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;min-width:44px;min-height:44px;border:1px solid var(--ring);border-radius:10px;background:var(--card);color:var(--ink);cursor:pointer;margin-left:auto;font-size:14px;font-weight:600;transition:all .2s ease}
@@ -218,7 +226,11 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
 }
 @media(max-width:760px){
   body{font-size:17px;line-height:1.75}
-  .layout{padding:12px;gap:16px}
+  .layout{
+    padding-left:12px;padding-right:12px;padding-bottom:12px;
+    padding-top:calc(12px + env(safe-area-inset-top,0px) + var(--layout-top-gap));
+    gap:16px
+  }
   .brand-logo svg{width:44px;height:44px}
   .brand-logo img{width:44px;height:44px}
   .brand h1{font-size:20px}
@@ -247,7 +259,11 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
 }
 @media(max-width:480px){
   body{font-size:16px;line-height:1.7}
-  .layout{padding:10px;padding-top:calc(10px + 260px)}
+  .layout{
+    --layout-top-gap:clamp(68px,19vh,112px);
+    padding:10px;
+    padding-top:calc(10px + env(safe-area-inset-top,0px) + var(--layout-top-gap))
+  }
   .teacher-grid--poster .teacher-poster{padding:10px}
   .teacher-grid--poster .teacher-poster img{height:220px;padding:10px}
   .brand{margin-bottom:12px;gap:10px}
@@ -292,7 +308,11 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
 }
 @media(max-width:360px){
   body{font-size:15px;line-height:1.65}
-  .layout{padding:8px;gap:12px}
+  .layout{
+    padding-left:8px;padding-right:8px;padding-bottom:8px;
+    padding-top:calc(8px + env(safe-area-inset-top,0px) + var(--layout-top-gap));
+    gap:12px
+  }
   .brand h1{font-size:16px}
   .brand-logo svg{width:36px;height:36px}
   .brand-logo img{width:36px;height:36px}
@@ -318,15 +338,29 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
 }
 /* Orientation-specific tweaks */
 @media screen and (orientation:portrait){
-  .layout{grid-template-columns:1fr}
-  .sidebar{position:static}
+  /* Хедер в потоке — без огромного «воздуха» под фиксированную панель */
+  .layout{
+    --layout-top-gap:0px;
+    grid-template-columns:1fr;
+    padding-top:calc(12px + env(safe-area-inset-top,0px))
+  }
+  .sidebar{
+    position:static;
+    top:auto;left:auto;right:auto;
+    margin-bottom:12px;
+    box-shadow:0 8px 28px rgba(15,23,42,.08)
+  }
   .hero{grid-template-columns:1fr}
   .photo-wrap{min-height:260px}
 }
 @media screen and (orientation:landscape) and (max-height:500px){
   body{font-size:16px;line-height:1.6}
-  .layout{gap:14px}
-  .sidebar{position:static}
+  .layout{
+    --layout-top-gap:0px;
+    gap:14px;
+    padding-top:calc(12px + env(safe-area-inset-top,0px))
+  }
+  .sidebar{position:static;margin-bottom:10px}
   .nav a{padding:8px 10px;margin-bottom:6px}
   .card{padding:18px;border-radius:14px}
   .section-title h2{font-size:20px}

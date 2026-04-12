@@ -7,7 +7,7 @@
   --card:#ffffff;
   --ring: rgba(15,23,42,.08);
   /* Якоря: отступ чуть больше и масштабируется с высотой экрана (vh + clamp) */
-  --header-scroll-offset: clamp(172px, calc(5.25rem + 12vh), 265px);
+  --header-scroll-offset: clamp(120px, calc(4rem + 11vh), 220px);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 img{max-width:100%;height:auto}
@@ -23,7 +23,7 @@ html{
 a,button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(59,130,246,0.1)}
 /* Prevent text size adjustment on iOS */
 @media screen and (max-width:900px){
-  :root{--header-scroll-offset:clamp(205px, calc(6rem + 14vh), 300px)}
+  :root{--header-scroll-offset:clamp(96px, calc(3.25rem + 12vh), 200px)}
   html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   body{font-size:17px;line-height:1.75}
   p{margin:10px 0 16px;font-size:16px;line-height:1.6}
@@ -31,7 +31,7 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(59,130,246,0
   li{margin:6px 0;font-size:16px;line-height:1.6}
 }
 @media screen and (max-width:480px){
-  :root{--header-scroll-offset:clamp(238px, calc(6.5rem + 15vh), 320px)}
+  :root{--header-scroll-offset:clamp(88px, calc(3rem + 11vh), 180px)}
   body{font-size:16px;line-height:1.7}
   p{margin:8px 0 14px;font-size:15px;line-height:1.6}
   ul,ol{margin:8px 0 16px 20px}
@@ -42,4 +42,8 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(59,130,246,0
   p{margin:6px 0 12px;font-size:14px;line-height:1.6}
   ul,ol{margin:6px 0 14px 18px}
   li{margin:4px 0;font-size:14px;line-height:1.6}
+}
+/* В портрете хедер в потоке — якоря не нуждаются в огромном scroll-padding */
+@media screen and (orientation:portrait) and (max-width:900px){
+  :root{--header-scroll-offset:clamp(48px, 8vh, 80px)}
 }
