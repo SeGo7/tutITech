@@ -1,7 +1,7 @@
 .layout{
   --layout-top-gap:clamp(100px,14vh,168px);
   max-width:1200px;margin:auto;padding:18px;
-  padding-top:calc(18px + env(safe-area-inset-top,0px) + var(--layout-top-gap))
+  padding-top:calc(18px + env(safe-area-inset-top,0px) + max(var(--layout-top-gap), var(--header-h, 0px)))
 }
 .sidebar{
   position:fixed;
@@ -182,7 +182,7 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .layout{
     --layout-top-gap:clamp(72px,18vh,118px);
     padding:12px;
-    padding-top:calc(12px + env(safe-area-inset-top,0px) + var(--layout-top-gap))
+    padding-top:calc(12px + env(safe-area-inset-top,0px) + max(var(--layout-top-gap), var(--header-h, 0px)))
   }
   .sidebar{top:10px;left:12px;right:12px;width:auto;padding:10px 12px}
   .brand{margin-bottom:0}
@@ -228,7 +228,7 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   body{font-size:17px;line-height:1.75}
   .layout{
     padding-left:12px;padding-right:12px;padding-bottom:12px;
-    padding-top:calc(12px + env(safe-area-inset-top,0px) + var(--layout-top-gap));
+    padding-top:calc(12px + env(safe-area-inset-top,0px) + max(var(--layout-top-gap), var(--header-h, 0px)));
     gap:16px
   }
   .brand-logo svg{width:44px;height:44px}
@@ -262,7 +262,7 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .layout{
     --layout-top-gap:clamp(68px,19vh,112px);
     padding:10px;
-    padding-top:calc(10px + env(safe-area-inset-top,0px) + var(--layout-top-gap))
+    padding-top:calc(10px + env(safe-area-inset-top,0px) + max(var(--layout-top-gap), var(--header-h, 0px)))
   }
   .teacher-grid--poster .teacher-poster{padding:10px}
   .teacher-grid--poster .teacher-poster img{height:220px;padding:10px}
@@ -310,7 +310,7 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   body{font-size:15px;line-height:1.65}
   .layout{
     padding-left:8px;padding-right:8px;padding-bottom:8px;
-    padding-top:calc(8px + env(safe-area-inset-top,0px) + var(--layout-top-gap));
+    padding-top:calc(8px + env(safe-area-inset-top,0px) + max(var(--layout-top-gap), var(--header-h, 0px)));
     gap:12px
   }
   .brand h1{font-size:16px}
