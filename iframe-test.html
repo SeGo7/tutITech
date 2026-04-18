@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Проверка встраивания формы</title>
+  <style>
+    body{margin:0;font-family:Arial,sans-serif;background:#f6f8fb;color:#0f172a}
+    .wrap{max-width:900px;margin:24px auto;padding:0 16px}
+    .card{background:#fff;border:1px solid rgba(15,23,42,.12);border-radius:12px;padding:16px}
+    h1{margin:0 0 12px;font-size:22px}
+    p{margin:0 0 12px;line-height:1.5}
+    iframe{display:block;width:100%;height:760px;border:0;border-radius:10px;background:#fff}
+    a{color:#2563eb}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Тест iframe Яндекс Формы</h1>
+      <p>Если ниже отображается форма, значит встраивание работает корректно.</p>
+      <iframe
+        src="https://forms.yandex.ru/u/69e1d6a990290224958b0b44/?iframe=1"
+        frameborder="0"
+        name="ya-form-test-69e1d6a990290224958b0b44"
+        title="Тест встраивания формы">
+      </iframe>
+      <p>
+        Если форма не отображается, откройте прямую ссылку:
+        <a href="https://forms.yandex.ru/u/69e1d6a990290224958b0b44/?iframe=1" target="_blank" rel="noopener">
+          forms.yandex.ru/u/69e1d6a990290224958b0b44/?iframe=1
+        </a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

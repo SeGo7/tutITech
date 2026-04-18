@@ -155,9 +155,21 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
 .step-badge{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:800;flex-shrink:0}
 .step-text{flex:1}
 /* Section with accent background */
+.card#application{background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(139,92,246,0.08));border:2px solid rgba(59,130,246,.45)}
 .card#join{background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(139,92,246,0.1));border:2px solid var(--accent)}
 .card#join .section-title h2{background-size:100% 8px}
 .card#join p{font-size:18px;margin-bottom:20px;line-height:1.6}
+.yandex-form-embed{margin:14px 0 18px}
+.yandex-form-embed iframe{display:block;width:100%;max-width:650px;min-height:760px;border:0;border-radius:12px;background:#fff}
+.form-fallback{margin:0 0 14px;padding:12px 14px;border:1px solid var(--ring);border-radius:12px;background:rgba(255,255,255,.7)}
+.form-fallback p{font-size:14px;line-height:1.5;color:var(--muted);margin:0 0 10px}
+.form-fallback a{color:var(--accent);font-weight:700}
+.form-fallback .form-fallback__btn{width:auto}
+.privacy-note{font-size:14px;color:var(--muted);margin:6px 0 18px}
+.privacy-note a{color:var(--accent);font-weight:700}
+.legal-footer{max-width:1200px;margin:0 auto 16px;padding:0 18px;text-align:center}
+.legal-footer a{color:var(--muted);text-decoration:none;border-bottom:1px dashed rgba(15,23,42,.25)}
+.legal-footer a:hover{color:var(--ink);border-bottom-color:rgba(15,23,42,.45)}
 /* Hero CTA buttons */
 .hero-cta .btn.primary{font-size:18px;padding:16px 28px;display:inline-flex;align-items:center;gap:8px}
 .hero-cta .btn.primary .vk-icon{width:20px;height:20px;display:inline-block;vertical-align:middle;margin-right:0}
@@ -217,8 +229,15 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .step-badge{width:40px;height:40px;font-size:16px;flex-shrink:0}
   .step-text{font-size:16px;line-height:1.5}
   .card-list li{padding:16px;font-size:16px;line-height:1.6}
+  .card#application p{font-size:16px;margin-bottom:18px}
   .card#join p{font-size:16px;margin-bottom:18px}
   .card#join .btn.full-accent{margin-top:16px;width:100%;justify-content:center}
+  .yandex-form-embed iframe{min-height:680px}
+  .form-fallback{padding:12px}
+  .form-fallback p{font-size:13px}
+  .form-fallback .form-fallback__btn{width:100%}
+  .privacy-note{font-size:13px}
+  .legal-footer{padding:0 12px;margin-bottom:12px}
   .reviews-modal__inner{padding:16px;max-width:95vw;margin:12px}
   .reviews-modal__close{top:8px;right:8px;padding:10px 14px;min-width:44px;min-height:44px;font-size:14px}
   .reviews-modal__media{max-height:85vh}
@@ -302,8 +321,16 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .step-button{padding:12px;gap:10px;border-radius:12px}
   .step-badge{width:32px;height:32px;font-size:14px}
   .step-text{font-size:14px;line-height:1.5}
+  .card#application p{font-size:15px;margin-bottom:16px}
   .card#join p{font-size:15px;margin-bottom:16px}
   .card#join .btn.full-accent{margin-top:14px;width:100%;justify-content:center}
+  .yandex-form-embed iframe{min-height:620px;border-radius:10px}
+  .form-fallback{padding:10px;border-radius:10px}
+  .form-fallback p{font-size:12px;line-height:1.5}
+  .form-fallback .form-fallback__btn{width:100%}
+  .privacy-note{font-size:12px;line-height:1.5}
+  .legal-footer{padding:0 10px;margin-bottom:10px}
+  .legal-footer a{font-size:13px}
   .reviews-gallery{gap:10px}
   .reviews-gallery .review-card{padding:8px;border-radius:12px}
   .reviews-modal__inner{padding:12px;max-width:98vw;margin:8px;border-radius:16px}
@@ -337,6 +364,7 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .step-button{padding:10px;gap:8px}
   .step-badge{width:28px;height:28px;font-size:13px}
   .step-text{font-size:13px}
+  .card#application p{font-size:14px;margin-bottom:14px}
   .card#join p{font-size:14px;margin-bottom:14px}
   .card#join .btn.full-accent{margin-top:12px;width:100%;justify-content:center}
 }
