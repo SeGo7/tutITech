@@ -17,24 +17,25 @@
   margin-bottom:0;
 }
 .sidebar{background:rgba(255,255,255,.58);backdrop-filter:blur(14px);border:1px solid rgba(15,23,42,.08);border-radius:18px;box-shadow:0 10px 40px rgba(15,23,42,.08)}
-.sidebar{padding:12px 14px}
+.sidebar{padding:6px 10px}
 .sidebar{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:12px;margin-bottom:0;flex:0 0 auto}
-.brand a{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand{display:flex;align-items:center;gap:6px;margin-bottom:0;flex:0 0 auto}
+.brand a{display:flex;align-items:center;gap:6px;text-decoration:none;color:inherit}
 .brand-logo{display:inline-block}
-.brand-logo svg{width:64px;height:64px;display:block}
-.brand-logo img{width:64px;height:64px;display:block}
-.nav{display:flex;align-items:center;gap:8px;flex:1 1 520px;min-width:260px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 2px 6px 2px;scroll-snap-type:x proximity}
+.brand-logo svg{width:40px;height:40px;display:block}
+.brand-logo img{width:40px;height:40px;display:block}
+.nav{display:flex;align-items:center;gap:4px;flex:1 1 520px;min-width:260px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0;scroll-snap-type:x proximity}
 .nav::-webkit-scrollbar{display:none}
-.nav a{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:999px;text-decoration:none;color:var(--muted);transition:.2s;border:1px solid transparent;font-size:15px;line-height:1}
+.nav a{display:inline-flex;align-items:center;justify-content:center;padding:5px 8px;border-radius:999px;text-decoration:none;color:var(--muted);transition:.2s;border:1px solid transparent;font-size:12px;line-height:1}
 .nav a{scroll-snap-align:start;white-space:nowrap}
 .nav a.active,.nav a:hover{background:rgba(59,130,246,.10);color:var(--ink);border-color:rgba(59,130,246,.18)}
 .nav{mask-image:linear-gradient(to right, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);-webkit-mask-image:linear-gradient(to right, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%)}
-.pill{display:flex;align-items:center;gap:8px;margin-top:12px;padding:8px 14px;border:1px solid var(--ring);border-radius:999px;text-decoration:none;color:var(--ink);width:fit-content}
+.pill{display:flex;align-items:center;gap:5px;margin-top:12px;padding:4px 8px;border:1px solid var(--ring);border-radius:999px;text-decoration:none;color:var(--ink);width:fit-content}
 .sidebar .pill.contact{display:flex;max-width:100%}
 .sidebar .pill.contact + .pill.contact{margin-top:8px}
-.sidebar-contacts{display:flex;align-items:center;gap:8px;flex:0 0 auto;margin-top:0;margin-bottom:0}
+.sidebar-contacts{display:flex;align-items:center;justify-content:center;align-self:center;gap:8px;flex:0 0 auto;height:100%;margin-top:0;margin-bottom:0}
 .sidebar-contacts .pill.contact{margin-top:0}
+.sidebar-contacts .pill.contact{display:inline-flex;align-items:center;justify-content:center;min-height:30px;padding-top:6px;padding-bottom:6px;line-height:1.2}
 .sidebar-contacts .pill.contact + .pill.contact{margin-top:0}
 main{display:flex;flex-direction:column;gap:32px;min-width:0}
 .card{background:var(--card);padding:24px;border-radius:18px;border:1px solid var(--ring);box-shadow:0 4px 20px rgba(0,0,0,.06);opacity:0;transform:translateY(20px);transition:.6s}
@@ -159,12 +160,8 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
 .card#join{background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(139,92,246,0.1));border:2px solid var(--accent)}
 .card#join .section-title h2{background-size:100% 8px}
 .card#join p{font-size:18px;margin-bottom:20px;line-height:1.6}
-.yandex-form-embed{margin:14px 0 18px}
-.yandex-form-embed iframe{display:block;width:100%;max-width:650px;min-height:760px;border:0;border-radius:12px;background:#fff}
-.form-fallback{margin:0 0 14px;padding:12px 14px;border:1px solid var(--ring);border-radius:12px;background:rgba(255,255,255,.7)}
-.form-fallback p{font-size:14px;line-height:1.5;color:var(--muted);margin:0 0 10px}
-.form-fallback a{color:var(--accent);font-weight:700}
-.form-fallback .form-fallback__btn{width:auto}
+.application-form{width:100%;max-width:650px;margin:18px auto 14px}
+.application-form iframe{display:block;width:100%;max-width:100%;border:0;border-radius:14px;background:#fff}
 .privacy-note{font-size:14px;color:var(--muted);margin:6px 0 18px}
 .privacy-note a{color:var(--accent);font-weight:700}
 .legal-footer{max-width:1200px;margin:0 auto 16px;padding:0 18px;text-align:center}
@@ -204,7 +201,7 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .sidebar .nav.is-open{display:flex;flex-wrap:nowrap;gap:8px;padding:6px 0}
   .nav a{min-height:44px;padding:12px 14px;font-size:15px}
   .pill{min-height:44px;padding:12px 14px;font-size:15px;margin-top:0;display:inline-flex;align-items:center;gap:8px;width:fit-content}
-  .sidebar-contacts{flex-basis:100%;justify-content:flex-start;flex-wrap:wrap;margin-top:4px}
+  .sidebar-contacts{flex-basis:100%;justify-content:center;flex-wrap:wrap;margin-top:4px}
   .sidebar .pill.contact + .pill.contact{margin-top:0}
   main{gap:24px}
   .card{padding:20px;border-radius:16px;gap:16px}
@@ -232,10 +229,6 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .card#application p{font-size:16px;margin-bottom:18px}
   .card#join p{font-size:16px;margin-bottom:18px}
   .card#join .btn.full-accent{margin-top:16px;width:100%;justify-content:center}
-  .yandex-form-embed iframe{min-height:680px}
-  .form-fallback{padding:12px}
-  .form-fallback p{font-size:13px}
-  .form-fallback .form-fallback__btn{width:100%}
   .privacy-note{font-size:13px}
   .legal-footer{padding:0 12px;margin-bottom:12px}
   .reviews-modal__inner{padding:16px;max-width:95vw;margin:12px}
@@ -324,10 +317,6 @@ body::after{bottom:-140px;right:-140px;width:500px;height:500px;background:radia
   .card#application p{font-size:15px;margin-bottom:16px}
   .card#join p{font-size:15px;margin-bottom:16px}
   .card#join .btn.full-accent{margin-top:14px;width:100%;justify-content:center}
-  .yandex-form-embed iframe{min-height:620px;border-radius:10px}
-  .form-fallback{padding:10px;border-radius:10px}
-  .form-fallback p{font-size:12px;line-height:1.5}
-  .form-fallback .form-fallback__btn{width:100%}
   .privacy-note{font-size:12px;line-height:1.5}
   .legal-footer{padding:0 10px;margin-bottom:10px}
   .legal-footer a{font-size:13px}
